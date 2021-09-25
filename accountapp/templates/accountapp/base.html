@@ -20,17 +20,22 @@ crossorigin="anonymous">
 {% block content %} 
 {% include 'accountapp/header.html' %}
 {% include 'accountapp/nav.html' %} 
-    <div id="pragmatic_main" style="height: 20rem; background-color: #38df81; border-radius:1rem; margin: 2rem;">
+    <div id="pragmatic_main" style="height: 20rem; border-radius:1rem; margin: 2rem;">
         <h1 style="display:block; text-align: center;">
-            Hello World 2
+            Hello World LIST!
         </h1>
         <div class="testing" style="display:block"> block</div>
         <div class="testing" style="display:inline">inline</div>
         <div class="testing" style="display:inline-block">inline-block</div>
         <div class="testing" style="display:none"></div>
-        <form action="/account/hello_world" method="POST">
-            {% csrf_token %}
+        <form action="/account/hello_world" method="POST" style="text-align: center">
+           {% csrf_token %}
+           <div>
+              <input type="text" name="hello_world_input">
+	   </div>
+	   <div>
             <input type="submit" class="btn btn-primary" value="POST">
+	   </div>
         </form>
         <h1 style="display:block; text-align: center;"> {{ text }} </h1>
 
