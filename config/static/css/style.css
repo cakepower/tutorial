@@ -1,0 +1,200 @@
+#container{
+    width: 400px;
+    height: 739px;
+    border-radius: 0 0 23px 23px;
+    box-shadow: 5px 5px 10px 0 rgba(0,0,0, 0.16);
+    border: solid 1px #ffffff;
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -38.6%);
+}
+
+#header{
+    height: 103px;
+    background-color: #1e5bce;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#header >.icon{
+    font-family: 'Lobster', cursive;
+}
+
+.btn_container{
+    height: 64px;
+    font-size: 25px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.btn_container a {
+    color: #cecece;
+    text-decoration: none;
+}
+.btn_container > div {
+    position: relative;
+}
+.btn_container > div:after{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #6c6c6c;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    border-radius: 50%;
+    opacity: 0;
+}
+.btn_container > div.active:after {
+    opacity: 1;
+}
+.btn_container > div.active a{
+    color: #6c6c6c;
+}
+.btn_container > div:first-child{
+    margin-right: 30px;
+}
+.empty_area{
+    width: 341.3px;
+    height: 423.8px;
+    margin-top: 70px;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.1);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 900;
+    color: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#over-container{
+    padding: 0 30px 0 30px;
+    height: 511px;
+    /* background: red; */
+    margin: 30px auto 0 auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#over-container >.scroll_inner article {
+    height:70.8px;
+    box-shadow:3px 3px 6px 0 rgba(0,0,0, 0.1);
+    background-color: #eee;
+    margin-bottom: 5px;
+    padding: 10px ;
+    position: relative;
+}
+
+#over-container >.scroll_inner article > span {
+    display: block;
+}
+#over-container .site_name{
+    font-size: 18px;
+    font-weight: 900;
+    color: #4b4b4b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#over-container .line{
+    width: 30px;
+    height: 2px;
+    background-color: #8e8e8e;
+    margin-bottom: 10px;
+}
+
+#over-container .site_url{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#over-container .site_url > a {
+    color:#7499ff;
+    text-decoration: none;
+ }
+#over-container>.scroll_inner article.list01 .form_container{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+#over-container>.list01 .form_container > button:first-child{
+    background-color: #b7b7b7;
+    margin-bottom: 10px;
+}
+#over-container>.list01 .form_container > button:last-child {
+    background-color: pink;
+}
+#over-container>.list01 .form_container > button {
+    border: none;
+    width: 47.2px;
+    height: 18.3px;
+    border-radius: 4px;
+    background-color: #b7b7b7;
+}
+#edit_container {
+    width: 341px;
+    height: 130px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+#edit_container > form > p {
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.22);
+    margin-bottom: 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#edit_container > form > p > label {
+    width: 90px;
+    margin-left: 10px;
+}
+
+#edit_container > form > p > input {
+    width: 210px;
+    height: 24px;
+    margin-left: 5px;
+}
+
+#edit_container > form > .create {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    font-size: 15px;
+    color: #fff;
+    width: 66px;
+    height: 30px;
+    background: #0b3694;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#nav a {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:coral;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}

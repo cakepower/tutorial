@@ -1,0 +1,27 @@
+#pragmatic_header{
+    text-align: center; 
+    margin: 2rem 0;
+}
+#pragmatic_header .title {
+    font-family: 'Lobster', cursive;
+    color: rgb(235, 133, 38);
+    text-align: center; 
+}
+
+#pragmatic_header .nav {
+    text-align: center; 
+}
+
+#pragmatic_main {
+    font-family: 'Lobster', cursive;
+}
+.pragmatic_footer_logo {
+    font-family: 'Lobster', cursive;
+    color:blueviolet;
+}
+.testing {
+    background-color: white;
+    height: 3rem;
+    width: 3rem;
+    margin: 1rem;
+}

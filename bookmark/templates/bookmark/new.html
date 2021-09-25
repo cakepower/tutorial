@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}  
+{% load static %} 
+
+{% block head %} 
+{% include 'bookmark/head.html' %} 
+{% endblock %} 
+
+{% block content %} 
+<section id="container">
+    {% include 'bookmark/header.html' %} 
+    <section class="btn_container">
+        <div class="home"><a href="{% url 'bookmark:list' %}" class="home">home</a></div>
+        <div class="create active"><a href="{% url 'bookmark:new' %}" class="create active">create</a></div>
+    </section>
+
+    <section id="edit_container">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.as_p }} 
+            <input class="create" type="submit" value="추가">
+
+        </form>
+    </section>
+</section>
+
+{% endblock %} 
