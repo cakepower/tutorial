@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os;
 
 from pathlib import Path
+from django.urls import reverse, reverse_lazy
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark',
     'accountapp',
+    'shoppingM',
     'pragmatic',
+    'bootstrap4',
+    'snapshot',
+    
 ]
 
 MIDDLEWARE = [
@@ -121,13 +128,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    os.path.join(BASE_DIR, 'config', 'static'),
 
-]
+STATIC_URL = '/static/'
+print(BASE_DIR)
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'tutorial/', 'shoppingM/', 'static/'),
+    os.path.join(BASE_DIR, 'config/', 'static/'),
+    os.path.join(BASE_DIR,  'accountapp/', 'static/'),
+    os.path.join(BASE_DIR,  'snapshot/', 'static/'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

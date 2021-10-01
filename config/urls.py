@@ -23,4 +23,6 @@ urlpatterns = [
     path('list/', include('bookmark.urls')),
     path('account/', include('accountapp.urls')),
     path('pragmatic/', include('pragmatic.urls')),
+    path('shoppingM/', include('shoppingM.urls')),
+    path('snapshot/', include('snapshot.urls')),
 ]

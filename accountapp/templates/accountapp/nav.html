@@ -1,4 +1,11 @@
-<div id="nav" style="text-align: center; margin: 1rem 0 0 0;">
-    <span><a href="/account" style="text-decoration: none; display:inline-block" > Account </a></span>
-    <span><a href="/list"  style="text-decoration: none; display:inline-block"> Book-Mark </a></span>
+<div id="nav">
+    <span><a href="/account" > Account </a></span>
+    <span><a href="/list"  > Book-Mark </a></span>
+    <span><a href="/snapshot/index"  > Portfolio </a></span>
+    <span><a href="/index_m"  > Mall </a></span>
+    {% if not user.is_authenticated %}
+    <a href="{% url 'accountapp:login' %}?next={{ request.path }}"> <span> Login </span></a>
+    {% else %} 
+    <a href="{% url 'accountapp:logout' %}?next={{ request.path }}"> <span> Logout </span></a>
+    {% endif %} 
 </div>

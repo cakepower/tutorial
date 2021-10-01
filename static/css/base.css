@@ -1,0 +1,64 @@
+#pragmatic_header {
+    font-family: 'Lobster', cursive;
+    color: #666;
+    text-align: center;
+    display: block;
+}
+
+#pragmatic_header .title{
+    font-family: 'Lobster', cursive;
+    color: #666;
+    text-align: center;
+    display: block;
+    margin-top: 3rem;
+}
+#pragmatic_footer {
+    text-align: center;
+    display:block;
+    font-size: 0.9rem;
+}
+
+.pragmatic_footer_button a {
+    text-align: center;
+    font-size: 0.9rem;
+}
+#pragmatic_footer_logo {
+    font-family: 'Lobster', cursive;
+    color:blueviolet;
+}
+
+#nav {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:blueviolet;
+    text-align: center;
+    margin-right: 1.2rem;
+    margin-top: .5rem;
+    font-size: 0.9rem;
+}
+
+#nav span a {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    color:rgb(224, 152, 18);
+    margin-right: 1.2rem;
+    margin-top: .5rem;
+} 
+
+@font-face {
+    font-family: 'NanumSquareR';
+    src: local('NanumSquareR'),
+    url("{% static 'fonts/NanumSquareR.ttf' %}") format("opentype");
+}
+
+@font-face {
+    font-family: 'NanumSquareEB';
+    src: local('NanumSquareEB'),
+    url("{% static 'fonts/NanumSquareEB.ttf' %}") format("opentype");
+}
+
+@font-face {
+    font-family: 'NanumSquareB';
+    src: local('NanumSquareB'),
+    url("{% static 'fonts/NanumSquareB.ttf' %}") format("opentype");
+}
+

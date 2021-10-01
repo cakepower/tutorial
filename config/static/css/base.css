@@ -15,6 +15,22 @@
 #pragmatic_main {
     font-family: 'Lobster', cursive;
 }
+#nav {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    margin-top: .9rem;
+}
+
+#nav a {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:coral;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    text-decoration: none; 
+    display:inline-block;
+}
+
 .pragmatic_footer_logo {
     font-family: 'Lobster', cursive;
     color:blueviolet;
