@@ -1,0 +1,83 @@
+{% extends 'accountapp/layout.html' %}
+
+{% block head %}
+{% load bootstrap5 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+{% include 'accountapp/head.html' %}
+{% endblock %}
+
+{% block content %}
+{% include 'accountapp/header.html' %}
+
+{# % include 'accountapp/nav.html' % #}
+
+<div id="pragmatic_main">
+    <h1 class="text-center" style="font-family: 'Spoqa Han Sans Neo', 'sans-serif';"> 
+        이케아 미래를 위한 Things Design
+    </h1>
+</div>
+<div class="container col-lg-6 col-md-12 col-sm-12" style="font-family: 'Spoqa Han Sans Neo', 'sans-serif';">
+        <!-- <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> -->
+            <div class="row mb-5 m-1 justify-content-center text-center" > 
+                <div class="card rounded-3" style="background-color:#ccc; width:39rem;">
+                    <!-- Product image-->
+                    <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />  -->
+                    <div class="card-body p-1 mt-3">
+                        <h4 style="font-size: 1.7rem; word-break: keep-all; line-height: 2.5rem;">                        
+                            <b class="text-primary">{{ cond.upcond }}</b>은(는) 커지고, <b class="text-success">
+                            {{ cond.downcond }}</b>은(는) 축소하며, <b class="text-danger">{{ cond.discond }}</b>이 유지되고, 
+                            <b class="text-warning bg-dark">{{ cond.transcond }}</b>이 완전히 변모한다는 가정 하에,<br>
+                            이케아는 <b class="text-success bg-white">{{ cond.field }}</b>과 관련된 분야에서 3~5년</b>후 주거 라이프스타일의 모습을 어떻게 그리고 있을까요? <br>
+                            A양(군)이 <b class="text-success bg-white">{{ cond.field }}분야</b>에서 이케아 제품과 서비스를 이용하는 <b class="bg-white">{{ future }}모습</b>을 
+                            시나리오 (하루 일과 중심)형식으로 작성해봅시다.
+                        </h4>
+                    </div>
+
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-3 pb-3 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark btn-warning mt-auto" href="/ikea">{{ index_n }}번과 다른 미래의 모습은?</a></div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+<div class="container col-lg-5 col-md-12 col-sm-12">
+        <form action="account/ikea" method="POST" style="text-align: center">
+            {% csrf_token %}
+            <div class="col-lg-6 col-md-12 col-sm-12 w-100 mt-1 mx-auto">
+                <input type="hidden" name="input_title" value="{{ condition.upcond }}:커지고, {{ condition.downcond }}:축소하며, {{ condition.discond }}:유지되고, 
+                {{ condition.transcond }}:변화하는, {{ condition.field }} 분야에서">
+                <textarea class="form-control form-control-sm form-control-md" rows="16" name="input_contents"></textarea>
+                <input type="submit" class="btn btn-dark rounded-pill col-sm-6 col-lg-5 mt-2 mb-2" value="퍼소나의 하루일과 작성하기">
+            </div>
+        </form>
+</div>
+    {% if worlds %}
+<div class="container col-lg-12 col-md-12 col-sm-12 text-center" style="font-family: 'Spoqa Han Sans Neo', 'sans-serif';">
+        <h2>이미 <b class="mr-1" style="display:inline;">{{ worlds|length }}</b>분이 미래의 라이프 스토리를 작성해주셨습니다. </h2>
+</div>
+
+<div class="container col-lg-12 col-md-12 col-sm-12 g-0 mr-3 p-0 w-100">
+        <div class="d-flex flex-row flex-nowrap overflow-auto row-cols-lg-3 row-cols-sm-1 row-cols-md-2">
+
+<!--         </div> row-cols-lg-3 row-cols-sm-1 row-cols-md-1 g-lg-1 g-sm-0"> -->
+            {% for world_items in worlds %}   
+            <div class="card rounded-3 g-sm-0" style="min-width: 340px;">
+
+                <div class="card-body">
+                    <a style="font-family:'Spoqa Han Sans Neo'; font-size: 1.1rem; word-break: keep-all; line-height: 2.2rem;">{{ forloop.counter }} : {{ world_items.contents }} </a>
+                </div>
+
+            </div> 
+            {% endfor %} 
+        </div>
+</div>
+
+    {% endif %}
+
+{#% include 'accountapp/footer.html' %#}
+{% endblock %}

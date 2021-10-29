@@ -1,9 +1,12 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
 #container{
-    width: 400px;
-    height: 739px;
-    border-radius: 0 0 23px 23px;
+/*     width: 400px;
+    height: 739px; */
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+/*     border-radius: 0 0 23px 23px;
     box-shadow: 5px 5px 10px 0 rgba(0,0,0, 0.16);
-    border: solid 1px #ffffff;
+    border: solid 1px #ffffff; */
     background-color: #ffffff;
     position: absolute;
     left: 50%;

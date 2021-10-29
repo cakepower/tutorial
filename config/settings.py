@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'shoppingM',
     'pragmatic',
     'bootstrap4',
+    'bootstrap5',
     'snapshot',
     
 ]
@@ -114,9 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-KR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -131,14 +132,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
-print(BASE_DIR)
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'tutorial/', 'shoppingM/', 'static/'),
+    os.path.join(BASE_DIR, 'shoppingM/', 'static/'),
     os.path.join(BASE_DIR, 'config/', 'static/'),
     os.path.join(BASE_DIR,  'accountapp/', 'static/'),
     os.path.join(BASE_DIR,  'snapshot/', 'static/'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
